@@ -3,7 +3,36 @@
 [ext_resource type="Texture2D" uid="uid://dslcsxwqmrhoq" path="res://icon.svg" id="1_4q6xk"]
 
 [node name="MyLevel" type="Node2D"]
+position = Vector2(173, 13)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(560, 306)
+position = Vector2(284, 186)
+scale = Vector2(0.4375, 1)
+texture = ExtResource("1_4q6xk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(533, 186)
+scale = Vector2(0.4375, 1)
+texture = ExtResource("1_4q6xk")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(406, 381)
+scale = Vector2(0.313309, 0.560786)
+texture = ExtResource("1_4q6xk")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(377, 492)
+scale = Vector2(4.65562, 0.232653)
+texture = ExtResource("1_4q6xk")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(452.411, 115.621)
+rotation = -0.614102
+scale = Vector2(1.27461, 0.157845)
+texture = ExtResource("1_4q6xk")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(359.411, 99.6214)
+rotation = 0.986699
+scale = Vector2(1.27461, 0.157845)
 texture = ExtResource("1_4q6xk")
