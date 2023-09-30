@@ -16,3 +16,7 @@ func _physics_process(_delta):
         velocity.x = speed
     
     move_and_slide()
+    
+    var viewport_size = get_viewport_rect().size
+
+    global_position = global_position.clamp(Vector2(0,0), viewport_size)
