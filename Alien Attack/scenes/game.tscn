@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb0ikqe7dywc4"]
+[gd_scene load_steps=3 format=3 uid="uid://bb0ikqe7dywc4"]
 
 [ext_resource type="Texture2D" uid="uid://cew2advtat5cx" path="res://assets/textures/bg.png" id="1_loary"]
+[ext_resource type="PackedScene" uid="uid://bk1naj7ycup86" path="res://scenes/player.tscn" id="2_i5dqr"]
 
 [node name="Game" type="Node2D"]
 
@@ -9,3 +10,6 @@ offset_right = 1296.0
 offset_bottom = 729.0
 texture = ExtResource("1_loary")
 stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_i5dqr")]
+position = Vector2(27, 370)
