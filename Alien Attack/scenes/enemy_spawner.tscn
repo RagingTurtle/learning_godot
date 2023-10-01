@@ -27,7 +27,9 @@ position = Vector2(1315, 550)
 position = Vector2(1315, 675)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 autostart = true
+
+[node name="EnemyContainer" type="Node" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
