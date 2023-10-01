@@ -10,6 +10,8 @@ height = 513.333
 [node name="Enemy" type="Area2D"]
 rotation = -1.55509
 scale = Vector2(0.2, 0.2)
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_fmegx")
 enemy_speed = 500
 
