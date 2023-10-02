@@ -36,3 +36,7 @@ func update_animations(direction):
 			animated_sprite.play("jump")
 		else:
 			animated_sprite.play("fall")
+
+func move_to(position):
+	velocity = Vector2.ZERO
+	global_position = position
