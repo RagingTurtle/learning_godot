@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 300
 
 var rocket_scene = preload("res://scenes/rocket.tscn")
+
 @onready var rocket_container = $RocketContainer
 
 func _process(_delta):
@@ -10,9 +11,8 @@ func _process(_delta):
 		shoot()
 
 func _physics_process(_delta):
-
 	velocity = Vector2(0,0)
-		
+	
 	if Input.is_action_pressed("move_down"):
 		velocity.y = speed
 	if Input.is_action_pressed("move_up"):

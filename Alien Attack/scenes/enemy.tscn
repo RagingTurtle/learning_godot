@@ -11,7 +11,7 @@ height = 513.333
 rotation = -1.55509
 scale = Vector2(0.2, 0.2)
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_fmegx")
 enemy_speed = 500
 
@@ -20,6 +20,3 @@ texture = ExtResource("2_biauf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_k2vgv")
-
-[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-45, 0)
