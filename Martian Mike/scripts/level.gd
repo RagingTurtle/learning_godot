@@ -6,7 +6,6 @@ extends Node2D
 
 func _ready():
 	for trap in traps:
-		#trap.connect("trap_activated", _on_trap_activated)
 		trap.trap_activated.connect(_on_trap_activated)
 	
 func _process(_delta):
