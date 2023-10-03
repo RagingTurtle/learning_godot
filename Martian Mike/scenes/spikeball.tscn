@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbckjh0hkojkw"]
+[gd_scene load_steps=7 format=3 uid="uid://cbckjh0hkojkw"]
 
 [ext_resource type="Script" path="res://scripts/trap.gd" id="1_h01ph"]
 [ext_resource type="Texture2D" uid="uid://b4d1ntlvxoxr7" path="res://assets/textures/other/Spiked Ball.png" id="2_ks2jy"]
@@ -6,18 +6,60 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1m4mg"]
 radius = 12.0
 
+[sub_resource type="Animation" id="Animation_n3sgu"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(50, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_as8kh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sa465"]
+_data = {
+"RESET": SubResource("Animation_as8kh"),
+"move": SubResource("Animation_n3sgu")
+}
+
 [node name="Spikeball" type="Node2D"]
 script = ExtResource("1_h01ph")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ks2jy")
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_ks2jy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_1m4mg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move"
+libraries = {
+"": SubResource("AnimationLibrary_sa465")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]
