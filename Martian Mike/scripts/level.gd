@@ -1,10 +1,13 @@
 extends Node2D
 
-@onready var start_position = $StartPosition
-@onready var player = $Player
-@onready var traps = get_tree().get_nodes_in_group("traps")
+@onready var start = $Start
+var player = null
 
 func _ready():
+	player = get_tree().get_first_node_in_group("player")
+	if player != null:
+		player.move_to(start.get_spawn_pos())
+	var traps = get_tree().get_nodes_in_group("traps")
 	for trap in traps:
 		trap.trap_activated.connect(_on_trap_activated)
 	
@@ -21,4 +24,4 @@ func _on_trap_activated():
 	reset_player()
 	
 func reset_player():
-	player.move_to(start_position.global_position)
+	player.move_to(start.get_spawn_pos())
