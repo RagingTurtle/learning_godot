@@ -14,7 +14,7 @@ func _process(_delta):
 	elif Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 
-func _on_deathzone_body_entered(body):
+func _on_deathzone_body_entered(_body):
 	reset_player()
 
 func _on_trap_activated():
