@@ -81,7 +81,7 @@ script = ExtResource("1_45qab")
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_fmqb1")
 animation = &"pressed"
-frame_progress = 0.00467337
+frame_progress = 0.628887
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -19)

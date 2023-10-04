@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyqhlhpdnt1lt"]
+[gd_scene load_steps=13 format=3 uid="uid://cyqhlhpdnt1lt"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_4p7kh"]
 [ext_resource type="PackedScene" uid="uid://boayvt0rlly6l" path="res://scenes/background.tscn" id="2_8hyv7"]
+[ext_resource type="PackedScene" uid="uid://cvut6mrrub7g4" path="res://scenes/level_2.tscn" id="2_hxi6o"]
 [ext_resource type="PackedScene" uid="uid://cbaxw6lfix343" path="res://scenes/player.tscn" id="2_ix54n"]
 [ext_resource type="Texture2D" uid="uid://cgfduh854r6xa" path="res://assets/textures/bg/Purple.png" id="3_3dep4"]
-[ext_resource type="Texture2D" uid="uid://cg80mbucmltej" path="res://icon.svg" id="3_h8guj"]
 [ext_resource type="PackedScene" uid="uid://bqgbea73rpag3" path="res://scenes/jump_pad.tscn" id="4_jecl4"]
 [ext_resource type="PackedScene" uid="uid://bn8x64a56gw5x" path="res://scenes/saw.tscn" id="5_gam7e"]
 [ext_resource type="PackedScene" uid="uid://cbckjh0hkojkw" path="res://scenes/spikeball.tscn" id="6_lml4r"]
@@ -12,28 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://bnpgawhretq7k" path="res://scenes/start.tscn" id="10_cr3xt"]
 [ext_resource type="PackedScene" uid="uid://blqs0yfi5lkbk" path="res://scenes/exit.tscn" id="11_8i63l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojlu1"]
-size = Vector2(128, 129)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocxhf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0r3m"]
 size = Vector2(38.6067, 20)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_4p7kh")
+next_level = ExtResource("2_hxi6o")
 
 [node name="Background" parent="." instance=ExtResource("2_8hyv7")]
 bg_texture = ExtResource("3_3dep4")
-
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(85, 201)
-collision_layer = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground"]
-texture = ExtResource("3_h8guj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_ojlu1")
 
 [node name="Deathzone" type="Area2D" parent="."]
 position = Vector2(229, 279)
@@ -42,7 +29,7 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
 position = Vector2(0.108855, 0)
-shape = SubResource("RectangleShape2D_ocxhf")
+shape = SubResource("RectangleShape2D_i0r3m")
 
 [node name="Objects" type="Node" parent="."]
 
