@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcroj1dttqp1y"]
+[gd_scene load_steps=9 format=3 uid="uid://bcroj1dttqp1y"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_0vrs7"]
 [ext_resource type="PackedScene" uid="uid://boayvt0rlly6l" path="res://scenes/background.tscn" id="2_nuiip"]
+[ext_resource type="PackedScene" uid="uid://csqmtc220xs82" path="res://scenes/ui_layer.tscn" id="3_fktf7"]
 [ext_resource type="PackedScene" uid="uid://d4ii6fqbrpx2k" path="res://scenes/deathzone.tscn" id="3_u4045"]
 [ext_resource type="PackedScene" uid="uid://bldcifey1xju7" path="res://scenes/tile_map.tscn" id="4_wn2y7"]
 [ext_resource type="PackedScene" uid="uid://bnpgawhretq7k" path="res://scenes/start.tscn" id="5_dpsyn"]
@@ -12,6 +13,8 @@
 script = ExtResource("1_0vrs7")
 
 [node name="Background" parent="." instance=ExtResource("2_nuiip")]
+
+[node name="UILayer" parent="." instance=ExtResource("3_fktf7")]
 
 [node name="Deathzone" parent="." instance=ExtResource("3_u4045")]
 position = Vector2(162, 114)
